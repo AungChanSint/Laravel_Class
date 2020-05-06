@@ -3,9 +3,11 @@
 @section('title', 'Home')
 
 @section('body')
-    <ul>
-        <li><a href="/php">PHP</a></li>
-        <li><a href="/js">JS</a></li>
-    </ul>
-    <h1>Home Page</h1>
+    <h2>Home page</h2>
+    @foreach ($receipes as $receipe)
+        <li>Name: {{ $receipe->name }}</li>
+        <li>Ingredients: {{ $receipe->ingredients }}</li>
+        <li>Category: {{ $receipe->category }}</li>
+        <hr>
+    @endforeach
 @endsection
