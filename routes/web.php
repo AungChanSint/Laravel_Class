@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ReceipeController@index');
-Route::get('/php', 'HomeController@php');
-Route::get('/js', 'HomeController@js');
+Route::resource('/receipe', 'ReceipeController');
+
+//Route::get('/receipe', 'ReceipeController@index');
+//Route::get('/receipe/{receipe}', 'ReceipeController@show');
+//Route::get('/receipe/create', 'ReceipeController@create');
+//Route::post('/receipe', 'ReceipeController@store');
+//Route::get('/receipe/{receipe}/edit', 'ReceipeController@edit');
+//Route::patch('/receipe/{receipe}', 'ReceipeController@update');
+//Route::delete('/receipe', 'ReceipeController@destroy');
