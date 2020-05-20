@@ -25,8 +25,11 @@
                 <input type="text" class="form-control" name="ingredients" value="{{ old('ingredients') }}">
             </div>
             <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" name="category" value="{{ old('category') }}">
+                <select class="form-control" name="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Add Receipe</button>
         </form>

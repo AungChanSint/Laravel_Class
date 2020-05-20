@@ -26,8 +26,13 @@
                 <input type="text" class="form-control" name="ingredients" value="{{ $receipe->ingredients }}" >
             </div>
             <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" name="category" value="{{ $receipe->category }}" >
+                <select class="form-control" name="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ $category->id == $receipe->categories->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Edit Receipe</button>
         </form>
